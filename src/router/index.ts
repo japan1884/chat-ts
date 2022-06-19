@@ -1,6 +1,7 @@
 import Login from "../components/pages/Login.vue";
 import SignUp from "../components/pages/SignUp.vue";
 import Chat from "../components/pages/Chat.vue";
+import NotFound from "../components/pages/NotFound.vue";
 import {createRouter, createWebHistory} from "vue-router";
 import {getAuth, onAuthStateChanged} from "firebase/auth";
 
@@ -23,6 +24,10 @@ const routes = [
         component: Login,
         name: 'login'
     },
+    {
+        path: "/:catchAll(.*)",
+        component: NotFound
+    }
 ];
 
 const router = createRouter({
